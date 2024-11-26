@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DILATACION SUPERFICIAL</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family:Comic Sans MS;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin: 20px 0;
+        }
+
+        p {
+            width: 80%;
+            max-width: 800px;
+            text-align: justify;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .image-container img {
+            width: 400px;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .calculator {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    .calculator input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .calculator button {
+        background-color: #2c3e50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .calculator button:hover {
+        background-color: #34495e;
+    }
+
+    .result {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+    </style>
+</head>
+<body>
+    <h1>DILATACION SUPERFICIAL</h1>
+    <p>
+        La <strong>dilatación superficial</strong> es un concepto fundamental en física que describe el fenómeno por el cual una superficie de un líquido experimenta una "tensión" que tiende a minimizar o aumentar su área. Este comportamiento es resultado de las fuerzas intermoleculares que actúan en la interfaz entre el líquido y el aire o entre dos líquidos no miscibles.
+    </p>
+    <p>
+        Cuando las moléculas en la superficie de un líquido están en contacto con el aire, experimentan una atracción hacia las moléculas del líquido que las rodean, pero no tienen moléculas en la parte superior que las atraigan de la misma manera, lo que genera una especie de "tensión" que reduce la superficie expuesta. Este fenómeno es responsable de varias propiedades y comportamientos en los líquidos, como la formación de gotas esféricas, la ascensión capilar y la estabilidad de ciertos sistemas líquidos.
+    </p>
+    <p>
+        La <strong>dilatación superficial</strong> puede entenderse mejor al estudiar el concepto de <strong>tensión superficial</strong>, que es la medida de esta fuerza por unidad de longitud en la superficie del líquido. En este contexto, la dilatación superficial implica cómo varía la energía interna del sistema al modificar el área superficial, una propiedad esencial en fenómenos como la formación de burbujas, la adhesión de líquidos a superficies sólidas y la interacción entre líquidos y sólidos en una amplia variedad de procesos naturales y tecnológicos.
+    </p>
+  
+
+    <img src="Diferencia de area.webp" alt="Imagen 1 sobre dilatación superficial">
+
+<h1>Calculadora de Dilatación Superficial</h1>
+<div class="calculator">
+    <form id="dilatacionForm">
+        <label for="areaInicial">Área inicial (A_0) en m²:</label>
+        <input type="number" id="areaInicial" placeholder="Ejemplo: 2.5" step="0.01" required>
+
+        <label for="coeficiente">Coeficiente de dilatación lineal (alpha):</label>
+        <input type="number" id="coeficiente" placeholder="Ejemplo: 0.000012" step="0.000001" required>
+
+        <label for="deltaTemp">Cambio de temperatura (Delta T) en °C:</label>
+        <input type="number" id="deltaTemp" placeholder="Ejemplo: 50" step="0.1" required>
+
+        <button type="button" onclick="calcularDilatacion()">Calcular</button>
+    </form>
+    <div class="result" id="resultado"></div>
+</div>
+
+<script>
+    function calcularDilatacion() {
+        // Obtener los valores de los inputs
+        const A0 = parseFloat(document.getElementById('areaInicial').value);
+        const alpha = parseFloat(document.getElementById('coeficiente').value);
+        const deltaT = parseFloat(document.getElementById('deltaTemp').value);
+
+        // Verificar que los valores sean válidos
+        if (isNaN(A0) || isNaN(alpha) || isNaN(deltaT)) {
+            document.getElementById('resultado').innerText = "Por favor, ingresa valores válidos.";
+            return;
+        }
+
+        // Calcular el cambio en el área
+        const deltaA = 2 * alpha * A0 * deltaT;
+
+        // Mostrar el resultado
+        document.getElementById('resultado').innerText = 
+            `El cambio en el área (\u0394A) es: ${deltaA.toFixed(4)} m²`;
+    }
+</script>
+</body>
+    <!-- Contenedor de imágenes -->
+    <div class="image-container">
+        <img src="dilatacion1.png" alt="Imagen 1 sobre dilatación superficial">
+        <img src="COEFICIENTES DE DILATACION LINEAL.png" alt="Imagen 2 sobre dilatación superficial">
+        <img src="dilatacion3.png" alt="Imagen 3 sobre dilatación superficial">
+    </div>
+
+<h2>Tipos de dilatacion termica</h2>
+
+    <div class="video-container">
+        <video width="320" height="240" controls>
+            <source src="dilatacion de un metal.mp4" type="video/mp4"> 
+        </video>
+    </div>
+
+    <div class="video-container">
+        <video width="320" height="240" controls>
+            <source src="dilatacion de papel aluminio.mp4" type="video/mp4"> 
+        </video>
+    </div>
+
+
+    <h2>Estudiantes:</h2>
+    <ul>
+        <li>Mel Giorgia Ballesteros Delfin</li>
+        <li>George Neilss Fernández Jiménez  </li>
+        <li>Jorge Andre Ulloa Avila</li>
+        <li>Limberg Franz Mendez Saldaña</li>
+        <li>Pedro Matías Romero Villarroel </li>
+        <li>Willan David Arteaga Mallea</li>
+    </ul>
+
+</body>
+    
+
+
+
+</body>
+</html>
